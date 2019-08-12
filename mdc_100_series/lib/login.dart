@@ -41,11 +41,37 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: 120.0),
             // [Name]
-            TextField(
-              controller: _usernameController,
-              decoration: InputDecoration(
-                filled: true,
-                labelText: 'Username',
+            Theme(
+              child: TextField(
+                controller: _usernameController,
+                decoration: InputDecoration(
+                  filled: true,
+                  labelText: 'Username',
+//                  enabledBorder: OutlineInputBorder(
+//                    borderRadius: BorderRadius.all(
+//                      Radius.circular(16.0),
+//                    ),
+//                    borderSide: BorderSide(
+//                      color: Colors.brown,
+//                      width: 1.0,
+//                      style: BorderStyle.solid,
+//                    ),
+//                  ),
+                ),
+              ),
+              data: ThemeData(
+                inputDecorationTheme: InputDecorationTheme(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(16.0),
+                    ),
+                    borderSide: BorderSide(
+                      color: Colors.green,
+                      width: 2.0,
+                      style: BorderStyle.solid,
+                    ),
+                  ),
+                ),
               ),
             ),
 // spacer
@@ -78,7 +104,12 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text('NEXT'),
                   onPressed: () {
                     // TODO: Show the next page (101)
-                    Navigator.pop(context);
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (BuildContext context) {
+                      return Container(
+                        color: Colors.blue,
+                      );
+                    }));
                   },
                 ),
               ],
@@ -88,7 +119,6 @@ class _LoginPageState extends State<LoginPage> {
             // TODO: Wrap Password with AccentColorOverride (103)
             // TODO: Add TextField widgets (101)
             // TODO: Add button bar (101)
-
           ],
         ),
       ),

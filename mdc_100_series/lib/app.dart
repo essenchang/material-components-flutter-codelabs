@@ -19,7 +19,6 @@ import 'login.dart';
 
 // TODO: Convert ShrineApp to stateful widget (104)
 class ShrineApp extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,6 +31,20 @@ class ShrineApp extends StatelessWidget {
       initialRoute: '/login',
       onGenerateRoute: _getRoute,
       // TODO: Add a theme (103)
+      theme: ThemeData(
+        inputDecorationTheme: InputDecorationTheme(
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(16.0),
+            ),
+            borderSide: BorderSide(
+              color: Colors.amber,
+              width: 1.0,
+              style: BorderStyle.solid,
+            ),
+          ),
+        ),
+      ),
     );
   }
 
